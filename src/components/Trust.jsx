@@ -13,7 +13,7 @@ const Trust = () => {
     <section className="py-16 bg-white border-y">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-dark">
             Partner fidati
           </h2>
         </div>
@@ -21,7 +21,7 @@ const Trust = () => {
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="w-32 h-20 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500 font-bold text-xl"
+              className="w-32 h-20 bg-primary-main/10 rounded-lg flex items-center justify-center text-primary-dark/45 font-bold text-xl ring-1 ring-primary-main/10"
             >
               {partner.logo}
             </div>

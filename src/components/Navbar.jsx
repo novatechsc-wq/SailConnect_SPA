@@ -66,7 +66,7 @@ const Navbar = ({ sections }) => {
     <header className="fixed top-0 left-0 z-50 w-full px-3 pt-3 sm:px-5 sm:pt-4 lg:px-8 lg:pt-5">
       <nav
         aria-label="Principale"
-        className={`relative mx-auto max-w-[1600px] overflow-hidden rounded-[1.125rem] border transition-[box-shadow,background-color,border-color,backdrop-filter] duration-500 ease-out sm:rounded-2xl ${
+        className={`relative w-full overflow-hidden rounded-[1.125rem] border transition-[box-shadow,background-color,border-color,backdrop-filter] duration-500 ease-out sm:rounded-2xl ${
           scrolled
             ? 'border-slate-200/90 bg-white/[0.97] shadow-[0_10px_40px_-12px_rgba(15,35,70,0.12),0_0_0_1px_rgba(255,255,255,0.9)_inset] backdrop-blur-2xl backdrop-saturate-150'
             : 'border-white/45 bg-white/[0.76] shadow-[0_4px_30px_-8px_rgba(15,35,70,0.14),0_0_0_1px_rgba(255,255,255,0.55)_inset] backdrop-blur-xl backdrop-saturate-125'

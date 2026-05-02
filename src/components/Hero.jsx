@@ -56,9 +56,9 @@ function FeatureCarousel({ reduceMotion }) {
   const [paused, setPaused] = useState(false);
   const touchStartX = useRef(null);
 
-  const next = useCallback(() => setActive((i) => (i + 1) % features.length), []);
+  const next = useCallback(() => setActive((index) => (index + 1) % features.length), []);
   const prev = useCallback(
-    () => setActive((i) => (i - 1 + features.length) % features.length),
+    () => setActive((index) => (index - 1 + features.length) % features.length),
     []
   );
 
@@ -92,44 +92,6 @@ function FeatureCarousel({ reduceMotion }) {
     return () => window.clearInterval(id);
   }, [reduceMotion, paused, next]);
 
-  if (reduceMotion) {
-    return (
-      <div className="grid min-h-0 gap-3 overflow-y-auto overscroll-contain sm:gap-4 [@media(max-height:760px)]:gap-3">
-        {features.map((feature) => (
-          <article
-            key={feature.title}
-            className="relative isolate min-h-[5.5rem] shrink-0 overflow-hidden rounded-[1.5rem] border border-white/20 shadow-lg ring-1 ring-white/30 sm:min-h-[6rem] sm:rounded-[1.75rem]"
-          >
-            <img
-              src={feature.image}
-              alt={feature.imageAlt}
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/55 to-primary-dark/20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/50 via-transparent to-primary-dark/25" />
-            <div className="relative z-10 flex min-h-[5.5rem] flex-col justify-end gap-1.5 p-3.5 sm:min-h-[6rem] sm:gap-2 sm:p-4">
-              <div className="flex items-start gap-2.5 sm:gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/20 ring-1 ring-white/45 backdrop-blur-md sm:h-11 sm:w-11">
-                  <feature.icon className="text-white" size={22} aria-hidden />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-base font-bold leading-snug text-white drop-shadow-md sm:text-lg">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-white/88 sm:text-sm">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-    );
-  }
-
   return (
     <div
       className="relative flex w-full min-w-0 flex-col"
@@ -148,33 +110,41 @@ function FeatureCarousel({ reduceMotion }) {
         onKeyDown={onKeyDown}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
-        className="relative mx-auto h-[min(36vh,17.5rem)] min-h-[11.5rem] w-full max-w-[19rem] max-h-[19rem] cursor-grab touch-manipulation outline-none focus-visible:ring-2 focus-visible:ring-primary-light/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent active:cursor-grabbing sm:h-[min(34vh,18rem)] sm:min-h-[12rem] sm:max-h-[20rem] sm:max-w-[20rem] md:h-[min(32vh,19rem)] md:max-w-[21rem] xl:mx-0 xl:h-[min(38vh,20rem)] xl:max-h-[21rem] xl:max-w-[20rem] [@media(max-height:700px)]:h-[min(30vh,15rem)] [@media(max-height:700px)]:min-h-[10rem]"
+        className="relative mx-auto h-[min(39vh,20rem)] min-h-[13rem] w-full max-w-[22rem] cursor-grab touch-manipulation overflow-visible outline-none focus-visible:ring-2 focus-visible:ring-primary-light/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent active:cursor-grabbing sm:h-[min(37vh,20.5rem)] sm:min-h-[13.5rem] sm:max-w-[22.5rem] md:max-w-[23rem] xl:mx-0 xl:h-[min(38vh,21rem)] xl:max-h-[21rem] xl:max-w-[23rem] [@media(max-height:700px)]:h-[min(31vh,16rem)] [@media(max-height:700px)]:min-h-[11rem]"
       >
         {features.map((feature, index) => {
+          const offset = (index - active + features.length) % features.length;
           const isActive = index === active;
+          const coverflowStyles = [
+            { x: 0, z: 90, scale: 1, rotateY: 0, opacity: 1, blur: 0 },
+            { x: 15, z: 70, scale: 0.88, rotateY: -30, opacity: 0.72, blur: 0.2 },
+            { x: -15, z: 70, scale: 0.88, rotateY: 30, opacity: 0.72, blur: 0.2 },
+            { x: 28, z: 50, scale: 0.76, rotateY: -48, opacity: 0.42, blur: 0.9 },
+          ][offset];
+
           return (
-            <article
+            <button
               key={feature.title}
+              type="button"
               aria-hidden={!isActive}
-              className={`absolute inset-0 flex transition-[opacity,transform] duration-[780ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
-                isActive
-                  ? 'z-10 scale-100 opacity-100'
-                  : 'pointer-events-none z-0 scale-[0.96] opacity-0'
+              tabIndex={isActive ? 0 : -1}
+              onClick={() => setActive(index)}
+              className={`absolute left-1/2 top-0 h-full w-[88%] origin-center transition-[transform,opacity,filter] duration-[820ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+                isActive ? 'z-30' : 'z-10'
               }`}
+              style={{
+                transform: `translateX(calc(-50% + ${coverflowStyles.x}rem)) perspective(1400px) translateZ(${coverflowStyles.z}px) rotateY(${coverflowStyles.rotateY}deg) scale(${coverflowStyles.scale})`,
+                opacity: coverflowStyles.opacity,
+                filter: `blur(${coverflowStyles.blur}px) saturate(${isActive ? 1 : 0.94}) brightness(${isActive ? 1 : 0.88})`,
+              }}
             >
-              <div className="group/card relative isolate flex h-full min-h-0 w-full flex-col overflow-hidden rounded-xl border border-white/25 shadow-[0_16px_44px_-20px_rgba(15,35,70,0.55)] ring-1 ring-white/40 ring-offset-0 sm:rounded-2xl">
+              <div className="group/card relative isolate flex h-full min-h-0 w-full flex-col overflow-hidden rounded-[1.35rem] border border-white/25 shadow-[0_18px_48px_-22px_rgba(15,35,70,0.58)] ring-1 ring-white/40 ring-offset-0 sm:rounded-[1.65rem]">
                 <img
-                  key={isActive ? `in-${active}-${index}` : `off-${index}`}
                   src={feature.image}
-                  alt=""
-                  role="presentation"
+                  alt={feature.imageAlt}
                   loading={index === 0 ? 'eager' : 'lazy'}
                   decoding="async"
-                  className={`absolute inset-0 h-full w-full object-cover object-center will-change-transform ${
-                    isActive
-                      ? 'motion-safe:animate-feature-image-in'
-                      : 'scale-100 opacity-75'
-                  }`}
+                  className="absolute inset-0 h-full w-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/55 to-primary-dark/15" />
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/45 via-transparent to-primary-main/20 mix-blend-multiply" />
@@ -189,7 +159,11 @@ function FeatureCarousel({ reduceMotion }) {
                 )}
                 <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary-light/55 to-transparent opacity-90" />
 
-                <div className="relative z-10 mt-auto flex min-h-0 flex-1 flex-col justify-end overflow-y-auto overscroll-contain px-3 py-3 sm:px-4 sm:py-4 [@media(max-height:700px)]:py-2.5 [@media(max-height:700px)]:[scrollbar-width:thin]">
+                <div
+                  className={`relative z-10 mt-auto flex min-h-0 flex-1 flex-col justify-end overflow-y-auto overscroll-contain px-3 py-3 sm:px-4 sm:py-4 [@media(max-height:700px)]:py-2.5 [@media(max-height:700px)]:[scrollbar-width:thin] ${
+                    isActive ? 'opacity-100' : 'opacity-85'
+                  }`}
+                >
                   <div className="flex items-end gap-2.5 sm:gap-3">
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/18 shadow-md ring-1 ring-white/40 backdrop-blur-md transition-transform duration-500 group-hover/card:scale-105 sm:h-10 sm:w-10 sm:rounded-xl">
                       <feature.icon className="text-white drop-shadow-md" size={20} aria-hidden />
@@ -217,7 +191,7 @@ function FeatureCarousel({ reduceMotion }) {
                   </div>
                 </div>
               </div>
-            </article>
+            </button>
           );
         })}
       </div>
@@ -260,19 +234,19 @@ const Hero = () => {
           <source src={heroBgVideo} type="video/mp4" />
         </video>
 
-        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-primary-dark/88 via-primary-dark/50 to-primary-dark/28 max-sm:via-primary-dark/60" />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-primary-dark/35" />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-primary-dark/[0.97] via-primary-dark/45 to-primary-dark/5 max-lg:via-primary-dark/55" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-primary-dark/55 via-primary-dark/20 to-primary-dark/6 max-sm:via-primary-dark/35" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-primary-dark/45 via-primary-dark/6 to-primary-dark/8" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-primary-dark/60 via-primary-dark/18 to-primary-dark/1 max-lg:via-primary-dark/30" />
         <div
-          className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-b from-primary-dark/75 via-primary-dark/45 to-primary-dark/25 max-lg:from-primary-dark/80 lg:bg-gradient-to-r lg:from-black/55 lg:via-black/25 lg:to-transparent xl:from-black/45 xl:via-black/15"
+          className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-r from-primary-dark/40 via-primary-dark/14 to-primary-dark/6 max-lg:from-primary-dark/60 lg:bg-gradient-to-r lg:from-black/30 lg:via-black/12 lg:to-transparent xl:from-black/22 xl:via-black/8"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-0 z-[2] shadow-[inset_0_0_90px_rgba(0,0,0,0.35),inset_0_-100px_140px_rgba(15,30,60,0.5),inset_0_0_200px_rgba(0,0,0,0.2)]"
+          className="pointer-events-none absolute inset-0 z-[2] shadow-[inset_0_0_90px_rgba(0,0,0,0.18),inset_0_-100px_140px_rgba(15,30,60,0.28),inset_0_0_200px_rgba(0,0,0,0.12)]"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-0 z-[2] mix-blend-soft-light opacity-30 bg-gradient-to-tr from-cyan-200/25 via-transparent to-blue-300/20"
+          className="pointer-events-none absolute inset-0 z-[2] mix-blend-soft-light opacity-10 bg-gradient-to-r from-cyan-200/8 via-transparent to-blue-300/5"
           aria-hidden
         />
 
@@ -285,13 +259,10 @@ const Hero = () => {
           aria-hidden
         />
 
-        <div
-          className="pointer-events-none absolute inset-0 z-[8] bg-white motion-reduce:hidden motion-reduce:animate-none animate-hero-snap"
-          aria-hidden
-        />
+        {/* Removed subtle animated white overlay to reveal video more clearly */}
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-0 w-full max-w-[1600px] flex-1 flex-col overflow-hidden px-4 pt-[calc(4.75rem+env(safe-area-inset-top))] sm:px-6 sm:pt-[calc(5.25rem+env(safe-area-inset-top))] lg:px-8 lg:pt-[calc(5.5rem+env(safe-area-inset-top))] xl:pt-[calc(5.75rem+env(safe-area-inset-top))] [@media(max-height:720px)]:pt-[calc(4rem+env(safe-area-inset-top))]">
+      <div className="relative z-10 flex min-h-0 w-full flex-1 flex-col overflow-hidden px-4 pt-[calc(4.75rem+env(safe-area-inset-top))] sm:px-6 sm:pt-[calc(5.25rem+env(safe-area-inset-top))] lg:px-8 lg:pt-[calc(5.5rem+env(safe-area-inset-top))] xl:pt-[calc(5.75rem+env(safe-area-inset-top))] [@media(max-height:720px)]:pt-[calc(4rem+env(safe-area-inset-top))]">
         <div className="grid min-h-0 flex-1 gap-4 overflow-hidden sm:gap-5 xl:grid-cols-12 xl:items-center xl:gap-6 2xl:gap-10 [@media(max-height:720px)]:gap-3">
           {/* Copy — left half on desktop */}
           <div className="flex min-h-0 flex-col justify-center text-white xl:col-span-6 xl:overflow-y-auto xl:pr-4 2xl:pr-6 [@media(max-height:720px)]:justify-start">

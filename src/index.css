@@ -3,11 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-primary-main: #2f6faf;
+    --color-primary-light: #6fd3da;
+    --color-primary-dark: #1e3a6d;
+    --color-secondary-main: #3f8fc7;
+    --color-secondary-light: #6fd3da;
+  }
+
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans text-gray-800 antialiased;
+    @apply font-sans text-primary-dark antialiased;
   }
   section {
     @apply scroll-mt-20;

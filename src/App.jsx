@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="bg-white text-gray-900">
+    <div className="bg-white text-primary-dark">
       <Navbar sections={sections} />
       <section id="home" ref={sections.home}>
         <Hero />

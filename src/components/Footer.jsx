@@ -29,12 +29,11 @@ const Footer = () => {
             <ul className="space-y-2 text-white/70">
               <li><a href="#" className="hover:text-primary-light transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-primary-light transition-colors">Termini di Servizio</a></li>
-              <li><a href="#contatti" className="hover:text-primary-light transition-colors">Contatti</a></li>
             </ul>
           </div>
         </div>
         <div className="border-t border-white/15 pt-8 text-center text-white/55">
-          <p>&copy; 2024 VelaLink. Tutti i diritti riservati.</p>
+          <p>&copy; 2026 VelaLink. Tutti i diritti riservati.</p>
         </div>
       </div>
     </footer>

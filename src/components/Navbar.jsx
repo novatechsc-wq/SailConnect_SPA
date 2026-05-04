@@ -1,6 +1,7 @@
 // src/components/Navbar.jsx
 import { useState, useEffect, useMemo } from 'react';
-import { FaBars, FaTimes, FaShip } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../assets/logo.png';
 
 const Navbar = ({ sections }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -92,9 +93,9 @@ const Navbar = ({ sections }) => {
                className="group flex min-w-0 items-center gap-3 rounded-lg py-1 text-left outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-primary-main/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:gap-3.5"
              >
                <img
-                 src="/src/assets/logo.png"
+                 src={logo}
                  alt="VelaLink Logo"
-                 className="h-9 w-auto rounded-[0.65rem] transition duration-300 group-hover:opacity-90 sm:h-10"
+                 className="h-12 w-auto rounded-[0.65rem] transition duration-300 group-hover:opacity-90 sm:h-14"
                />
                <span className="hidden min-w-0 flex-col justify-center sm:flex">
                  <span className="font-semibold leading-none tracking-[-0.03em] text-primary-dark text-[1.0625rem] sm:text-lg">

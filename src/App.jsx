@@ -6,6 +6,8 @@ import Features from './components/Features.jsx';
 import Marketplace from './components/Marketplace.jsx';
 import AboutStats from './components/AboutStats.jsx';
 import Gallery from './components/Gallery.jsx';
+import Trust from './components/Trust.jsx';
+import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
     community: useRef(null),
     marketplace: useRef(null),
     about: useRef(null),
+    contatti: useRef(null),
   };
 
   return (
@@ -33,6 +36,12 @@ function App() {
       </section>
       <section id="gallery">
         <Gallery />
+      </section>
+      <section id="trust">
+        <Trust />
+      </section>
+      <section id="contatti" ref={sections.contatti}>
+        <Contact />
       </section>
       <Footer />
     </div>

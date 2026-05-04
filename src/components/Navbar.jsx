@@ -13,7 +13,6 @@ const Navbar = ({ sections }) => {
       { id: 'community', label: 'Community', ref: sections.community },
       { id: 'marketplace', label: 'Marketplace', ref: sections.marketplace },
       { id: 'about', label: 'About', ref: sections.about },
-      { id: 'contatti', label: 'Contatti', ref: sections.contatti },
     ],
     [sections]
   );

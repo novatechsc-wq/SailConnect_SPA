@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import React from 'react';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -9,9 +10,9 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img
-                src="/src/assets/logo.png"
+                src={logo}
                 alt="VelaLink Logo"
-                className="h-10 w-auto"
+                className="h-14 w-auto sm:h-16"
               />
               <span className="font-bold text-xl">VelaLink</span>
             </div>
@@ -37,7 +38,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-white/15 pt-8 text-center text-white/55">
-          <p>&copy; 2024 VelaLink. Tutti i diritti riservati.</p>
+          <p>&copy; 2026 VelaLink. Tutti i diritti riservati.</p>
         </div>
       </div>
     </footer>

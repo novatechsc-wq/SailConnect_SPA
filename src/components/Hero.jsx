@@ -294,7 +294,7 @@ const Hero = () => {
             </h1>
 
             <p className="mt-3 max-w-xl text-[0.9rem] font-medium leading-snug text-white motion-reduce:animate-none animate-slide-up-hero [animation-delay:110ms] [text-shadow:0_1px_3px_rgba(0,0,0,0.9),0_2px_14px_rgba(0,0,0,0.5)] sm:mt-4 sm:text-base sm:leading-relaxed md:text-lg xl:mt-4 xl:max-w-none 2xl:text-xl [@media(max-height:720px)]:mt-2 [@media(max-height:720px)]:!text-[0.82rem] [@media(max-height:720px)]:leading-snug">
-              Connettiti con altri velisti, condividi esperienze e trova il posto barca perfetto — direttamente dall&apos;app.
+              Connettiti con altri velisti, condividi esperienze e trova il posto barca perfetto direttamente dall&apos;app.
             </p>
           </div>
 

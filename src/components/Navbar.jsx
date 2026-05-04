@@ -86,23 +86,25 @@ const Navbar = ({ sections }) => {
 
         <div className="relative px-4 sm:px-6 lg:px-8">
           <div className="relative flex h-[3.5rem] items-center justify-between sm:h-[3.75rem] lg:h-16">
-            <button
-              type="button"
-              onClick={() => scrollToSection(sections.home, 'home')}
-              className="group flex min-w-0 items-center gap-3 rounded-lg py-1 text-left outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-primary-main/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:gap-3.5"
-            >
-              <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-[0.65rem] bg-gradient-to-br from-primary-main via-[#3a7cbc] to-primary-dark text-white shadow-[0_2px_12px_-2px_rgba(47,111,175,0.45)] ring-1 ring-white/50 transition duration-300 group-hover:shadow-[0_4px_20px_-4px_rgba(47,111,175,0.5)] sm:h-10 sm:w-10 sm:rounded-[0.7rem]">
-                <FaShip className="text-[1.05rem] opacity-95 sm:text-[1.15rem]" aria-hidden />
-              </span>
-              <span className="flex min-w-0 flex-col justify-center">
-                <span className="font-semibold leading-none tracking-[-0.03em] text-primary-dark text-[1.0625rem] sm:text-lg">
-                  VelaLink
-                </span>
-                <span className="mt-[0.2rem] hidden text-[0.625rem] font-medium uppercase leading-none tracking-[0.28em] text-slate-500 sm:block">
-                  sailing social
-                </span>
-              </span>
-            </button>
+             <button
+               type="button"
+               onClick={() => scrollToSection(sections.home, 'home')}
+               className="group flex min-w-0 items-center gap-3 rounded-lg py-1 text-left outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-primary-main/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:gap-3.5"
+             >
+               <img
+                 src="/src/assets/logo.png"
+                 alt="VelaLink Logo"
+                 className="h-9 w-auto rounded-[0.65rem] transition duration-300 group-hover:opacity-90 sm:h-10"
+               />
+               <span className="hidden min-w-0 flex-col justify-center sm:flex">
+                 <span className="font-semibold leading-none tracking-[-0.03em] text-primary-dark text-[1.0625rem] sm:text-lg">
+                   VelaLink
+                 </span>
+                 <span className="mt-[0.2rem] text-[0.625rem] font-medium uppercase leading-none tracking-[0.28em] text-slate-500">
+                   sailing social
+                 </span>
+               </span>
+             </button>
 
             <div className="hidden items-center md:flex">
               <ul className="flex items-center gap-0.5 lg:gap-1" role="list">

@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import React from 'react';
-import logo from '../assets/logo.png';
+import logo from '../assets/vela_link_logo.png';
 
 const Footer = () => {
   return (
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-white/15 pt-8 text-center text-white/55">
-          <p>&copy; 2026 VelaLink. Tutti i diritti riservati.</p>
+          <p>&copy; {new Date().getFullYear()} VelaLink. Tutti i diritti riservati.</p>
         </div>
       </div>
     </footer>

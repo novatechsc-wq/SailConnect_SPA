@@ -1,6 +1,7 @@
 ﻿// src/components/Features.jsx
 import React from 'react';
 import { FaUsers, FaShip, FaStore, FaComments } from 'react-icons/fa';
+import ScrollReveal from './ScrollReveal';
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-primary-main/10">
@@ -39,19 +40,22 @@ const Features = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-primary-main/[0.06] to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <ScrollReveal variant="up" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-4">
             Tutto ciò di cui hai bisogno
           </h2>
           <p className="text-xl text-primary-dark/70 max-w-2xl mx-auto">
             Una piattaforma completa per vivere la tua passione per il mare al massimo
           </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <FeatureCard key={index} {...feature} />
-          ))}
-        </div>
+        </ScrollReveal>
+
+        <ScrollReveal variant="up" delayMs={120}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <FeatureCard key={index} {...feature} />
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

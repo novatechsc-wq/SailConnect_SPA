@@ -1,8 +1,13 @@
 // src/components/Footer.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/vela_link_logo.png';
+import TermsModal from './TermsModal';
+import PrivacyModal from './PrivacyModal';
 
 const Footer = () => {
+  const [termsOpen, setTermsOpen] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
   return (
     <footer className="bg-primary-dark text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,11 +37,27 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4"> legale</h4>
             <ul className="space-y-2 text-white/70">
-              <li><a href="#" className="hover:text-primary-light transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-primary-light transition-colors">Termini di Servizio</a></li>
+              <li>
+                <button
+                  onClick={(e) => { e.preventDefault(); setPrivacyOpen(true); }}
+                  className="hover:text-primary-light transition-colors"
+                >
+                  Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={(e) => { e.preventDefault(); setTermsOpen(true); }}
+                  className="hover:text-primary-light transition-colors"
+                >
+                  Termini di Servizio
+                </button>
+              </li>
             </ul>
           </div>
         </div>
+        <TermsModal isOpen={termsOpen} onClose={() => setTermsOpen(false)} />
+        <PrivacyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
         <div className="border-t border-white/15 pt-8 text-center text-white/55">
           <p>&copy; {new Date().getFullYear()} VelaLink. Tutti i diritti riservati.</p>
         </div>

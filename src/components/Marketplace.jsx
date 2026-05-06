@@ -1,7 +1,7 @@
 ﻿// src/components/Marketplace.jsx
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import heroMarina from '../assets/Marketplace/Image_1.webp';
-import featuredMarinaImg from '../assets/Marketplace/Gemini_Generated_Image_cd57klcd57klcd57.png';
+import featuredMarinaImg from '../assets/Marketplace/Image_2.webp';
 
 const SuggestionCard = ({ name, location, price, status, image }) => (
   <div className="rounded-[2rem] bg-white/95 border border-primary-dark/12 shadow-2xl overflow-hidden">

@@ -11,6 +11,10 @@ import {
 } from 'react-icons/fa';
 
 import heroBgVideo from '../assets/hero/herobg.mp4';
+import heroImage1 from '../assets/hero/image_1.webp';
+import heroImage2 from '../assets/hero/image_2.webp';
+import heroImage3 from '../assets/hero/image_3.webp';
+import heroImage4 from '../assets/hero/image_4.webp';
 
 const ROTATE_MS = 5500;
 
@@ -19,32 +23,28 @@ const features = [
     icon: FaUsers,
     title: 'Community di velisti',
     description: 'Condividi passioni, consigli e avventure con una community sempre più grande.',
-    image:
-      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=82',
+    image: heroImage1,
     imageAlt: 'Flotta di barche a vela in acqua',
   },
   {
     icon: FaShip,
     title: 'Esperienze in mare',
     description: 'Pubblica le tue uscite, scopri nuovi itinerari e lasciati ispirare.',
-    image:
-      'https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1600&q=82',
+    image: heroImage2,
     imageAlt: 'Barca a vela in navigazione aperta',
   },
   {
     icon: FaStore,
     title: 'Marketplace posti barca',
     description: 'Trova e prenota il posto barca ideale tra migliaia di marine.',
-    image:
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=82',
+    image: heroImage3,
     imageAlt: 'Yacht attraccato in marina',
   },
   {
     icon: FaComments,
     title: 'Chat e connessioni',
     description: 'Entra in contatto e crea nuove amicizie in mare e a terra.',
-    image:
-      'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1600&q=82',
+    image: heroImage4,
     imageAlt: 'Baia con acqua turchese e costa',
   },
 ];
@@ -215,7 +215,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative isolate box-border flex h-[min(100dvh,100svh)] min-h-0 max-h-[100dvh] flex-col overflow-hidden pb-[env(safe-area-inset-bottom)]">
+    <section className="relative isolate box-border flex h-[min(100dvh,100svh)] min-h-0 max-h-[100dvh] flex-col overflow-hidden pt-8 sm:pt-0 pb-[env(safe-area-inset-bottom)]">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div
           className="hidden h-full w-full motion-reduce:block"

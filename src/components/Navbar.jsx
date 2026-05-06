@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import { useState, useEffect, useMemo } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '../assets/logo.png';
+import logo from '../assets/vela_link_logo.png';
 
 const Navbar = ({ sections }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,10 +66,10 @@ const Navbar = ({ sections }) => {
     <header className="fixed top-0 left-0 z-50 w-full px-3 pt-3 sm:px-5 sm:pt-4 lg:px-8 lg:pt-5">
       <nav
         aria-label="Principale"
-        className={`relative w-full overflow-hidden rounded-[1.125rem] border transition-[box-shadow,background-color,border-color,backdrop-filter] duration-500 ease-out sm:rounded-2xl ${
+        className={`relative w-full overflow-hidden rounded-[1.125rem] border-0 md:border transition-[box-shadow,background-color,border-color,backdrop-filter] duration-500 ease-out sm:rounded-2xl ${
           scrolled
-            ? 'border-slate-200/90 bg-white/[0.97] shadow-[0_10px_40px_-12px_rgba(15,35,70,0.12),0_0_0_1px_rgba(255,255,255,0.9)_inset] backdrop-blur-2xl backdrop-saturate-150'
-            : 'border-white/45 bg-white/[0.76] shadow-[0_4px_30px_-8px_rgba(15,35,70,0.14),0_0_0_1px_rgba(255,255,255,0.55)_inset] backdrop-blur-xl backdrop-saturate-125'
+            ? 'md:border-slate-200/90 bg-transparent md:bg-white/[0.97] md:shadow-[0_10px_40px_-12px_rgba(15,35,70,0.12),0_0_0_1px_rgba(255,255,255,0.9)_inset] md:backdrop-blur-2xl md:backdrop-saturate-150'
+            : 'md:border-white/45 bg-transparent md:bg-white/[0.76] md:shadow-[0_4px_30px_-8px_rgba(15,35,70,0.14),0_0_0_1px_rgba(255,255,255,0.55)_inset] md:backdrop-blur-xl md:backdrop-saturate-125'
         }`}
       >
         <div
@@ -151,8 +151,8 @@ const Navbar = ({ sections }) => {
           </div>
 
           <div
-            id="mobile-nav-menu"
-            className={`md:hidden ${isOpen ? 'border-t border-slate-200/80' : ''}`}
+              id="mobile-nav-menu"
+              className="md:hidden"
           >
             {isOpen && (
               <nav aria-label="Mobile" className="px-1 pb-4 pt-1">

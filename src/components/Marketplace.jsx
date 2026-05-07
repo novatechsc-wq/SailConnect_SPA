@@ -2,6 +2,7 @@
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import heroMarina from '../assets/Marketplace/Image_1.webp';
 import featuredMarinaImg from '../assets/Marketplace/Image_2.webp';
+import ScrollReveal from './ScrollReveal';
 
 const SuggestionCard = ({ name, location, price, status, image }) => (
   <div className="rounded-[2rem] bg-white/95 border border-primary-dark/12 shadow-2xl overflow-hidden">
@@ -69,23 +70,19 @@ const Marketplace = () => {
   return (
     <section className="py-20 bg-primary-main/[0.06]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <ScrollReveal variant="up" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-4">
             Marketplace Posti Barca
           </h2>
           <p className="text-xl text-primary-dark/70 max-w-2xl mx-auto">
             Trova il tuo posto barca, ovunque tu sia. Cerca, confronta e prenota in pochi secondi.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-          <div className="flex flex-col gap-6 h-full">
+          <ScrollReveal variant="up" delayMs={90} className="flex flex-col gap-6 h-full">
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl ring-1 ring-primary-dark/12 flex-[3]">
-              <img
-                src={heroMarina}
-                alt="Map overview"
-                className="w-full h-full object-cover"
-              />
+              <img src={heroMarina} alt="Map overview" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/82 via-primary-dark/10 to-transparent" />
               <div className="absolute inset-x-0 top-6 px-6">
                 <div className="inline-flex items-center gap-3 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-primary-dark shadow-sm">
@@ -95,7 +92,9 @@ const Marketplace = () => {
               </div>
               <div className="absolute inset-x-0 bottom-6 px-6">
                 <div className="max-w-2xl rounded-[2rem] bg-white/95 p-6 shadow-2xl ring-1 ring-primary-dark/12">
-                  <p className="text-sm uppercase tracking-[0.24em] text-primary-dark/50">Marketplace</p>
+                  <p className="text-sm uppercase tracking-[0.24em] text-primary-dark/50">
+                    Marketplace
+                  </p>
                   <h3 className="mt-3 text-2xl md:text-3xl font-bold text-primary-dark leading-tight">
                     Trova il tuo posto barca, ovunque tu sia.
                   </h3>
@@ -106,34 +105,49 @@ const Marketplace = () => {
             <div className="flex-[2]">
               <SuggestionCard {...featuredMarina} />
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="flex flex-col gap-6 h-full">
+          <ScrollReveal variant="up" delayMs={160} className="flex flex-col gap-6 h-full">
             <div className="rounded-[2rem] bg-white p-6 md:p-8 shadow-2xl ring-1 ring-primary-dark/12 flex-[2]">
-              <h3 className="text-xl md:text-2xl font-semibold text-primary-dark mb-4">Unisciti alla community e naviga insieme a noi.</h3>
+              <h3 className="text-xl md:text-2xl font-semibold text-primary-dark mb-4">
+                Unisciti alla community e naviga insieme a noi.
+              </h3>
               <p className="text-primary-dark/70 mb-6">
-                Esplora le migliori offerte di marina in costa italiana ed europea, con proposte verificate e feedback autentici.
+                Esplora le migliori offerte di marina in costa italiana ed europea, con
+                proposte verificate e feedback autentici.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-4 rounded-3xl bg-primary-main/[0.06] p-4">
-                  <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-main/15 text-primary-dark font-semibold">1</span>
+                  <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-main/15 text-primary-dark font-semibold">
+                    1
+                  </span>
                   <div>
                     <h4 className="font-semibold text-primary-dark">Vedi le offerte migliori</h4>
-                    <p className="text-sm text-primary-dark/60">Offerte selezionate per te in base alla posizione e al rating.</p>
+                    <p className="text-sm text-primary-dark/60">
+                      Offerte selezionate per te in base alla posizione e al rating.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 rounded-3xl bg-primary-main/[0.06] p-4">
-                  <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-main/15 text-primary-dark font-semibold">2</span>
+                  <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-main/15 text-primary-dark font-semibold">
+                    2
+                  </span>
                   <div>
                     <h4 className="font-semibold text-primary-dark">Confronta i prezzi</h4>
-                    <p className="text-sm text-primary-dark/60">Visualizza tariffe e recensioni per scegliere il posto perfetto.</p>
+                    <p className="text-sm text-primary-dark/60">
+                      Visualizza tariffe e recensioni per scegliere il posto perfetto.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 rounded-3xl bg-primary-main/[0.06] p-4">
-                  <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-main/15 text-primary-dark font-semibold">3</span>
+                  <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-main/15 text-primary-dark font-semibold">
+                    3
+                  </span>
                   <div>
                     <h4 className="font-semibold text-primary-dark">Prenota in un click</h4>
-                    <p className="text-sm text-primary-dark/60">Completa la prenotazione in modo rapido e sicuro, senza complicazioni.</p>
+                    <p className="text-sm text-primary-dark/60">
+                      Completa la prenotazione in modo rapido e sicuro, senza complicazioni.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -142,10 +156,16 @@ const Marketplace = () => {
             <div className="rounded-[2rem] bg-primary-dark p-6 md:p-8 text-white shadow-2xl ring-1 ring-primary-dark flex-[3]">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.24em] text-primary-light/80">Offerte top</p>
-                  <h4 className="mt-2 text-xl md:text-2xl font-semibold">Top 3 marine consigliate</h4>
+                  <p className="text-sm uppercase tracking-[0.24em] text-primary-light/80">
+                    Offerte top
+                  </p>
+                  <h4 className="mt-2 text-xl md:text-2xl font-semibold">
+                    Top 3 marine consigliate
+                  </h4>
                 </div>
-                <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-primary-light/95 ring-1 ring-white/15">3 risultati</span>
+                <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-primary-light/95 ring-1 ring-white/15">
+                  3 risultati
+                </span>
               </div>
               <div className="space-y-4">
                 {topMarinas.map((marina) => (
@@ -164,7 +184,7 @@ const Marketplace = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

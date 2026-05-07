@@ -68,8 +68,8 @@ const Navbar = ({ sections }) => {
         aria-label="Principale"
         className={`relative w-full overflow-hidden rounded-[1.125rem] border-0 md:border transition-[box-shadow,background-color,border-color,backdrop-filter] duration-500 ease-out sm:rounded-2xl ${
           scrolled
-            ? 'md:border-slate-200/90 bg-transparent md:bg-white/[0.97] md:shadow-[0_10px_40px_-12px_rgba(15,35,70,0.12),0_0_0_1px_rgba(255,255,255,0.9)_inset] md:backdrop-blur-2xl md:backdrop-saturate-150'
-            : 'md:border-white/45 bg-transparent md:bg-white/[0.76] md:shadow-[0_4px_30px_-8px_rgba(15,35,70,0.14),0_0_0_1px_rgba(255,255,255,0.55)_inset] md:backdrop-blur-xl md:backdrop-saturate-125'
+            ? 'border-slate-200/80 bg-white/[0.96] shadow-[0_10px_40px_-12px_rgba(15,35,70,0.14),0_0_0_1px_rgba(255,255,255,0.92)_inset] backdrop-blur-2xl backdrop-saturate-150 md:border-slate-200/90 md:bg-white/[0.97] md:shadow-[0_10px_40px_-12px_rgba(15,35,70,0.12),0_0_0_1px_rgba(255,255,255,0.9)_inset] md:backdrop-blur-2xl md:backdrop-saturate-150'
+            : 'border-white/55 bg-white/[0.92] shadow-[0_4px_30px_-8px_rgba(15,35,70,0.18),0_0_0_1px_rgba(255,255,255,0.7)_inset] backdrop-blur-xl backdrop-saturate-125 md:border-white/45 md:bg-white/[0.76] md:shadow-[0_4px_30px_-8px_rgba(15,35,70,0.14),0_0_0_1px_rgba(255,255,255,0.55)_inset] md:backdrop-blur-xl md:backdrop-saturate-125'
         }`}
       >
         <div

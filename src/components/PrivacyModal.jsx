@@ -6,152 +6,169 @@ const PrivacyModal = ({ isOpen, onClose }) => {
     <BaseModal isOpen={isOpen} onClose={onClose} title="Privacy Policy">
       <div className="text-slate-800 text-sm leading-relaxed space-y-5">
         <p className="text-slate-700">
-          At VELALINK, we are committed to protecting your privacy while providing a
-          platform that enhances your sailing experience. This Privacy Policy
-          explains how we collect, use, and protect your information, with a
-          specific focus on your location data.
+          VELALINK si impegna a proteggere la tua privacy offrendo una piattaforma
+          che migliori la tua esperienza di navigazione a vela.
         </p>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            1. Information We Collect
+            1. Informazioni che Raccogliamo
           </h3>
           <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
             <li>
-              <strong>Account Information:</strong> Name, email, profile picture,
-              and sailing experience/vessel details.
+              <strong>Dati dell’account:</strong> Nome, email, immagine del
+              profilo, esperienza velica e dati dell’imbarcazione
             </li>
             <li>
-              <strong>Location Data (GPS):</strong> Precise or approximate location
-              for features like Live Map, Sailing Logs, and Nearby Sailors.
+              <strong>Dati di localizzazione (GPS):</strong> Posizione precisa o
+              approssimativa per funzionalità come “Mappa Live”, “Diari di
+              Navigazione” e “Velisti nelle Vicinanze”
             </li>
             <li>
-              <strong>User Content:</strong> Photos, videos, comments, and route
-              logs you share.
+              <strong>Contenuti degli utenti:</strong> Foto, video, commenti e
+              rotte condivise
             </li>
             <li>
-              <strong>Technical Data:</strong> IP address, device type, and
-              operating system.
+              <strong>Dati tecnici:</strong> Indirizzo IP, tipo di dispositivo e
+              sistema operativo
             </li>
             <li>
-              <strong>Social & Engagement Data:</strong> Events joined, comments,
-              likes, and reactions.
+              <strong>Dati social e di interazione:</strong> Eventi a cui
+              partecipi, commenti, like e reazioni
             </li>
             <li>
-              <strong>Multimedia Content:</strong> Photos and videos you upload.
+              <strong>Contenuti multimediali:</strong> Foto e video caricati sul
+              profilo o nelle pagine evento
             </li>
             <li>
-              <strong>Vessel Profiles:</strong> Boat data (brand, model, length,
-              home port, specs).
+              <strong>Profili delle imbarcazioni:</strong> Marca, modello,
+              lunghezza, porto di base e specifiche tecniche
             </li>
           </ul>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            2. How We Use Your Location Data
-          </h3>
-          <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
-            <li>Enable social features: show vessel position per your settings.</li>
-            <li>Record logs: create automated sailing trip logs.</li>
-            <li>Safety & Community: help nearby sailors connect.</li>
-            <li>Analytics: understand popular routes and density.</li>
-            <li>
-              Community networking, vessel discovery, moderation, and event
-              coordination.
-            </li>
-          </ul>
-        </section>
-
-        <section className="space-y-2">
-          <h3 className="text-base font-semibold text-slate-900">
-            3. Your Control Over Privacy
-          </h3>
-          <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
-            <li>Toggle Live Tracking on or off.</li>
-            <li>Set Privacy Zones where location is never broadcast.</li>
-            <li>Audience Selection: Only Me / My Crew / Whole Community.</li>
-            <li>Request deletion of trip logs or your account.</li>
-          </ul>
-        </section>
-
-        <section className="space-y-2">
-          <h3 className="text-base font-semibold text-slate-900">
-            4. Data Sharing and Disclosure
-          </h3>
-          <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
-            <li>With other users per your settings.</li>
-            <li>Service providers (cloud hosting) for storage and processing.</li>
-            <li>Legal requirements or emergency requests from authorities.</li>
-            <li>We never sell your precise location to advertisers.</li>
-          </ul>
-        </section>
-
-        <section className="space-y-2">
-          <h3 className="text-base font-semibold text-slate-900">
-            5. Events and Gatherings
+            2. Utilizzo dei Dati di Localizzazione
           </h3>
           <p className="text-slate-700">
-            VELALINK allows users to create and join events. We are not event
-            organizers and are not liable for what happens during events;
-            attendance is at your own risk.
+            I dati di posizione vengono utilizzati per:
           </p>
-        </section>
-
-        <section className="space-y-2">
-          <h3 className="text-base font-semibold text-slate-900">6. Data Security</h3>
-          <p className="text-slate-700">
-            We implement industry-standard encryption (SSL/TLS) to protect data in
-            transit and at rest, but no method is 100% secure.
-          </p>
-        </section>
-
-        <section className="space-y-2">
-          <h3 className="text-base font-semibold text-slate-900">
-            7. International Data Transfers
-          </h3>
-          <p className="text-slate-700">
-            Your information may be transferred to and processed in Italy if you
-            use the App outside Italy.
-          </p>
+          <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
+            <li>Abilitare funzionalità social</li>
+            <li>Registrare automaticamente i diari di navigazione</li>
+            <li>Facilitare connessioni tra velisti vicini</li>
+            <li>Analisi e miglioramento dell’App</li>
+            <li>Suggerire eventi pertinenti</li>
+            <li>Ricerca e scoperta di imbarcazioni simili</li>
+            <li>Moderazione dei contenuti</li>
+            <li>Coordinamento degli eventi</li>
+          </ul>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            8. Children’s Privacy
+            3. Controllo della Privacy
+          </h3>
+          <p className="text-slate-700">Puoi:</p>
+          <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
+            <li>Disattivare il tracciamento GPS</li>
+            <li>Impostare “Zone Nascoste”</li>
+            <li>Scegliere chi può vedere la tua posizione</li>
+            <li>Richiedere la cancellazione dei dati o dell’account</li>
+          </ul>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-base font-semibold text-slate-900">
+            4. Condivisione dei Dati
+          </h3>
+          <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
+            <li>
+              <strong>Con altri utenti:</strong> In base alle impostazioni sulla
+              privacy
+            </li>
+            <li>
+              <strong>Fornitori di servizi:</strong> Provider cloud (es. AWS,
+              Google Cloud)
+            </li>
+            <li>
+              <strong>Obblighi di legge:</strong> Autorità competenti in caso di
+              emergenze
+            </li>
+            <li>
+              Non vendiamo mai i tuoi dati di localizzazione a terzi a fini
+              pubblicitari.
+            </li>
+          </ul>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-base font-semibold text-slate-900">
+            5. Eventi e Raduni
           </h3>
           <p className="text-slate-700">
-            The App is not intended for individuals under 18. We do not knowingly
-            collect information from children.
+            VELALINK consente la creazione di eventi da parte degli utenti, ma
+            non è un organizzatore di eventi e non è responsabile per la
+            sicurezza, le condizioni meteo o eventuali controversie.
           </p>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            9. Your Rights (GDPR/CCPA)
+            6. Sicurezza dei Dati
           </h3>
+          <p className="text-slate-700">
+            Utilizziamo standard di sicurezza avanzati (SSL/TLS), pur riconoscendo
+            che nessun sistema è totalmente sicuro.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-base font-semibold text-slate-900">
+            7. Trasferimenti Internazionali di Dati
+          </h3>
+          <p className="text-slate-700">
+            I dati possono essere trattati in Italia anche se utilizzi l’App
+            dall’estero.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-base font-semibold text-slate-900">
+            8. Privacy dei Minori
+          </h3>
+          <p className="text-slate-700">
+            L’App non è destinata a minori di 18 anni.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-base font-semibold text-slate-900">
+            9. Diritti dell’Utente (GDPR/CCPA)
+          </h3>
+          <p className="text-slate-700">Hai diritto a:</p>
           <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
-            <li>Access the personal data we hold about you.</li>
-            <li>Correct inaccurate data.</li>
-            <li>Object to processing of location data.</li>
-            <li>Request portability of your sailing logs.</li>
+            <li>Accedere ai tuoi dati</li>
+            <li>Correggere dati inesatti</li>
+            <li>Opporti al trattamento dei dati GPS</li>
+            <li>Richiedere la portabilità dei dati</li>
           </ul>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            10. Changes to This Policy
+            10. Modifiche all’Informativa
           </h3>
           <p className="text-slate-700">
-            We may update this policy periodically and will notify you of material
-            changes via the App or email.
+            Eventuali modifiche saranno comunicate tramite App o email.
           </p>
         </section>
 
         <section className="rounded-xl bg-slate-50 border border-slate-200 p-4">
-          <h3 className="text-base font-semibold text-slate-900">Contact Us</h3>
+          <h3 className="text-base font-semibold text-slate-900">Contatti</h3>
           <p className="mt-1 text-slate-700">
-            For privacy questions or to exercise your rights, contact:{' '}
+            Per domande o richieste sui dati personali:{' '}
             <a
               className="text-primary-dark hover:underline"
               href="mailto:customerservice@velalink.it"

@@ -6,40 +6,42 @@ const TermsModal = ({ isOpen, onClose }) => {
     <BaseModal isOpen={isOpen} onClose={onClose} title="Termini di Servizio">
       <div className="text-slate-800 text-sm leading-relaxed space-y-5">
         <p className="text-slate-700">
-          Welcome to VELALINK, the social network dedicated to the sailing
-          community. By accessing or using our mobile application and services,
-          you agree to be bound by these Terms and Conditions.
+          Benvenuto su VELALINK, il social network dedicato alla comunità della
+          vela. Accedendo o utilizzando la nostra applicazione mobile e i nostri
+          servizi, accetti di essere vincolato dai presenti Termini e
+          Condizioni.
         </p>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            1. Acceptance of Terms
+            1. Accettazione dei Termini
           </h3>
           <p className="text-slate-700">
-            By creating an account, you represent that you are at least 18 years
-            of age (or the age of majority in your jurisdiction) and that you
-            have the legal capacity to enter into this agreement. If you do not
-            agree to these terms, please do not use the App.
+            Creando un account, dichiari di avere almeno 18 anni di età (o
+            l’età della maggiore età prevista nella tua giurisdizione) e di
+            avere la capacità legale di stipulare il presente accordo. Se non
+            accetti tali termini, ti invitiamo a non utilizzare l’App.
           </p>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            2. User Accounts and Security
+            2. Account Utente e Sicurezza
           </h3>
           <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
             <li>
-              <strong>Accuracy:</strong> You must provide accurate and complete
-              information when creating an account.
+              <strong>Accuratezza:</strong> Devi fornire informazioni accurate e
+              complete al momento della creazione dell’account.
             </li>
             <li>
-              <strong>Responsibility:</strong> You are solely responsible for
-              maintaining the confidentiality of your login credentials and for
-              all activities that occur under your account.
+              <strong>Responsabilità:</strong> Sei l’unico responsabile della
+              riservatezza delle tue credenziali di accesso e di tutte le
+              attività svolte tramite il tuo account.
             </li>
             <li>
-              <strong>Unauthorized Use:</strong> You must notify us immediately
-              of any breach of security or unauthorized use of your account.
+              <strong>Uso non autorizzato:</strong> Devi comunicarci
+              immediatamente qualsiasi violazione della sicurezza o utilizzo
+              non autorizzato del tuo account.
             </li>
           </ul>
         </section>
@@ -47,29 +49,31 @@ const TermsModal = ({ isOpen, onClose }) => {
         <section className="space-y-2">
           <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
             <h3 className="text-base font-semibold text-slate-900">
-              3. Maritime Safety & Navigation Disclaimer
+              3. Dichiarazione di esclusione di responsabilità su Sicurezza
+              Marittima e Navigazione
             </h3>
             <p className="mt-2 font-semibold text-slate-900">
-              CRITICAL: VELALINK is a social networking platform. It is NOT a
-              professional navigation tool.
+              CRITICO: VELALINK è una piattaforma di social networking. NON è
+              uno strumento professionale di navigazione.
             </p>
             <ul className="mt-3 list-disc pl-5 space-y-1 marker:text-amber-400">
               <li>
-                <strong>Informational Purposes Only:</strong> Any coordinates,
-                weather data, or route suggestions shared by users or the App
-                are for informational and social purposes only.
+                <strong>Solo a scopo informativo:</strong> Qualsiasi coordinata,
+                dato meteo o suggerimento di rotta condiviso dagli utenti o
+                dall’App ha finalità esclusivamente informative e sociali.
               </li>
               <li>
-                <strong>No Reliance:</strong> Never rely solely on this App for
-                navigation, safety at sea, or emergency situations. Always use
-                certified nautical charts, official AIS, and professional
-                maritime equipment.
+                <strong>Nessun affidamento:</strong> Non fare mai affidamento
+                esclusivo sull’App per la navigazione, la sicurezza in mare o le
+                situazioni di emergenza. Utilizza sempre carte nautiche
+                certificate, AIS ufficiale e strumenti marittimi professionali.
               </li>
               <li>
-                <strong>Assumption of Risk:</strong> Sailing is inherently
-                risky. You acknowledge that you use the App and any information
-                shared within it at your own risk. VELALINK is not liable for
-                any accidents, injuries, or property damage occurring at sea.
+                <strong>Assunzione del rischio:</strong> La navigazione a vela
+                comporta rischi intrinseci. Riconosci di utilizzare l’App e
+                tutte le informazioni condivise al suo interno a tuo esclusivo
+                rischio. VELALINK non è responsabile per incidenti, lesioni o
+                danni a persone o cose avvenuti in mare.
               </li>
             </ul>
           </div>
@@ -77,90 +81,86 @@ const TermsModal = ({ isOpen, onClose }) => {
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            4. User-Generated Content
+            4. Contenuti Generati dagli Utenti
           </h3>
           <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
             <li>
-              <strong>Ownership:</strong> You retain ownership of the photos,
-              videos, and logs you post.
+              <strong>Proprietà:</strong> Mantieni la proprietà delle foto, dei
+              video e dei diari di bordo che pubblichi.
             </li>
             <li>
-              <strong>License:</strong> By posting content, you grant VELALINK a
-              non-exclusive, royalty-free, worldwide license to use, display,
-              and distribute your content within the platform.
+              <strong>Licenza:</strong> Pubblicando contenuti, concedi a
+              VELALINK una licenza non esclusiva, gratuita, mondiale per
+              utilizzare, visualizzare e distribuire tali contenuti all’interno
+              della piattaforma.
             </li>
             <li>
-              <strong>Prohibited Content:</strong> You may not post content that
-              is illegal, defamatory, promotes unsafe maritime practices, or
-              infringes on the intellectual property of others.
+              <strong>Contenuti vietati:</strong> Non è consentito pubblicare
+              contenuti illegali, diffamatori, che promuovano pratiche marittime
+              non sicure o che violino i diritti di proprietà intellettuale di
+              terzi.
             </li>
           </ul>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            5. Code of Conduct
+            5. Codice di Condotta
           </h3>
+          <p className="text-slate-700">
+            Come membro della comunità velica, accetti di:
+          </p>
           <ul className="list-disc pl-5 space-y-1 marker:text-slate-400">
-            <li>Respect other sailors and users.</li>
-            <li>Avoid spamming or commercial solicitation without prior consent.</li>
-            <li>Refrain from uploading viruses or malicious code.</li>
-            <li>Not "scrape" or harvest data from other users.</li>
+            <li>Rispettare gli altri velisti e utenti.</li>
+            <li>Evitare spam o sollecitazioni commerciali senza previo consenso.</li>
+            <li>Non caricare virus o codice dannoso.</li>
+            <li>Non raccogliere o estrarre dati (“scraping”) dagli altri utenti.</li>
           </ul>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">6. Privacy</h3>
           <p className="text-slate-700">
-            Your privacy is important to us. Please refer to our Privacy Policy
-            to understand how we collect, use, and share your personal data and
-            location information (GPS).
+            La tua privacy è importante per noi. Consulta la nostra Informativa
+            sulla Privacy per comprendere come raccogliamo, utilizziamo e
+            condividiamo i tuoi dati personali e di localizzazione (GPS).
           </p>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            7. Limitation of Liability
+            7. Limitazione di Responsabilità
           </h3>
           <p className="text-slate-700">
-            To the maximum extent permitted by law, VELALINK and its affiliates
-            shall not be liable for any indirect, incidental, or consequential
-            damages, including but not limited to loss of profits, data, or
-            vessel damage, arising out of your use of the service.
+            Nella misura massima consentita dalla legge, VELALINK e le sue
+            affiliate non saranno responsabili per danni indiretti, incidentali
+            o consequenziali, inclusi, a titolo esemplificativo, perdita di
+            profitti, dati o danni all’imbarcazione, derivanti dall’uso del
+            servizio.
           </p>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            8. Account Termination
+            8. Cessazione dell’Account
           </h3>
           <p className="text-slate-700">
-            We reserve the right to suspend or terminate your account at our
-            sole discretion, without notice, for conduct that we believe
-            violates these Terms or is harmful to other users or the maritime
-            community.
+            Ci riserviamo il diritto di sospendere o chiudere il tuo account, a
+            nostra esclusiva discrezione e senza preavviso, nel caso di
+            comportamenti ritenuti in violazione dei presenti Termini o dannosi
+            per altri utenti o per la comunità marittima.
           </p>
         </section>
 
         <section className="space-y-2">
           <h3 className="text-base font-semibold text-slate-900">
-            9. Changes to Terms
+            9. Modifiche ai Termini
           </h3>
           <p className="text-slate-700">
-            We may update these Terms from time to time. We will notify you of
-            any significant changes by posting the new Terms within the App.
-            Your continued use of the App after changes are made constitutes
-            acceptance of the new Terms.
-          </p>
-        </section>
-
-        <section className="space-y-2">
-          <h3 className="text-base font-semibold text-slate-900">
-            10. Governing Law
-          </h3>
-          <p className="text-slate-700">
-            These Terms are governed by and construed in accordance with the
-            laws of Italy, without regard to its conflict of law principles.
+            Possiamo aggiornare periodicamente questi Termini. Le modifiche
+            significative saranno comunicate tramite pubblicazione dei nuovi
+            Termini all’interno dell’App. L’uso continuato dell’App dopo tali
+            modifiche costituisce accettazione dei nuovi Termini.
           </p>
         </section>
       </div>

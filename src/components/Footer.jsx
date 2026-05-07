@@ -53,6 +53,14 @@ const Footer = () => {
                   Termini di Servizio
                 </button>
               </li>
+              <li>
+                <a
+                  className="hover:text-primary-light transition-colors"
+                  href="mailto:customerservice@velalink.it"
+                >
+                  customerservice@velalink.it
+                </a>
+              </li>
             </ul>
           </div>
         </div>

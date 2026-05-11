@@ -94,7 +94,7 @@ function FeatureCarousel({ reduceMotion }) {
 
   return (
     <div
-      className="relative flex w-full min-w-0 flex-col"
+      className="relative flex min-h-0 w-full min-w-0 flex-col max-xl:h-full max-xl:items-center max-xl:justify-center"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -110,16 +110,17 @@ function FeatureCarousel({ reduceMotion }) {
         onKeyDown={onKeyDown}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
-        className="relative mx-auto h-[min(39vh,20rem)] min-h-[13rem] w-full max-w-[22rem] cursor-grab touch-manipulation overflow-visible outline-none focus-visible:ring-2 focus-visible:ring-primary-light/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent active:cursor-grabbing sm:h-[min(37vh,20.5rem)] sm:min-h-[13.5rem] sm:max-w-[22.5rem] md:max-w-[23rem] xl:mx-0 xl:h-[min(38vh,21rem)] xl:max-h-[21rem] xl:max-w-[23rem] [@media(max-height:700px)]:h-[min(31vh,16rem)] [@media(max-height:700px)]:min-h-[11rem]"
+        className="relative mx-auto min-h-0 w-full max-w-[22rem] max-h-[min(39vh,20rem)] max-xl:flex-none max-xl:h-[min(39vh,20rem)] max-xl:max-h-full cursor-grab touch-manipulation overflow-visible outline-none focus-visible:ring-2 focus-visible:ring-primary-light/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent active:cursor-grabbing sm:max-h-[min(37vh,20.5rem)] sm:max-w-[22.5rem] md:max-w-[23rem] xl:mx-0 xl:h-[min(38vh,21rem)] xl:max-h-[21rem] xl:max-w-[23rem] xl:min-h-[13.5rem] xl:[@media(max-height:700px)]:h-[min(31vh,16rem)] xl:[@media(max-height:700px)]:max-h-[16rem] xl:[@media(max-height:700px)]:min-h-[11rem] [@media(max-height:700px)]:max-h-[min(31vh,16rem)]"
       >
         {features.map((feature, index) => {
           const offset = (index - active + features.length) % features.length;
           const isActive = index === active;
+          // xShift: % of slide width (same box as translateX(-50%)); scales coverflow on all viewports.
           const coverflowStyles = [
-            { x: 0, z: 90, scale: 1, rotateY: 0, opacity: 1, blur: 0 },
-            { x: 15, z: 70, scale: 0.88, rotateY: -30, opacity: 0.72, blur: 0.2 },
-            { x: -15, z: 70, scale: 0.88, rotateY: 30, opacity: 0.72, blur: 0.2 },
-            { x: 28, z: 50, scale: 0.76, rotateY: -48, opacity: 0.42, blur: 0.9 },
+            { xShift: 0, z: 90, scale: 1, rotateY: 0, opacity: 1, blur: 0 },
+            { xShift: 42, z: 70, scale: 0.88, rotateY: -30, opacity: 0.72, blur: 0.2 },
+            { xShift: -42, z: 70, scale: 0.88, rotateY: 30, opacity: 0.72, blur: 0.2 },
+            { xShift: 74, z: 50, scale: 0.76, rotateY: -48, opacity: 0.42, blur: 0.9 },
           ][offset];
 
           return (
@@ -129,11 +130,11 @@ function FeatureCarousel({ reduceMotion }) {
               aria-hidden={!isActive}
               tabIndex={isActive ? 0 : -1}
               onClick={() => setActive(index)}
-              className={`absolute left-1/2 top-0 h-full w-[88%] origin-center transition-[transform,opacity,filter] duration-[820ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+              className={`absolute left-1/2 top-0 h-full w-[80%] origin-center transition-[transform,opacity,filter] duration-[820ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none sm:w-[86%] md:w-[88%] ${
                 isActive ? 'z-30' : 'z-10'
               }`}
               style={{
-                transform: `translateX(calc(-50% + ${coverflowStyles.x}rem)) perspective(1400px) translateZ(${coverflowStyles.z}px) rotateY(${coverflowStyles.rotateY}deg) scale(${coverflowStyles.scale})`,
+                transform: `translateX(calc(-50% + ${coverflowStyles.xShift}%)) perspective(1400px) translateZ(${coverflowStyles.z}px) rotateY(${coverflowStyles.rotateY}deg) scale(${coverflowStyles.scale})`,
                 opacity: coverflowStyles.opacity,
                 filter: `blur(${coverflowStyles.blur}px) saturate(${isActive ? 1 : 0.94}) brightness(${isActive ? 1 : 0.88})`,
               }}
@@ -262,8 +263,8 @@ const Hero = () => {
         {/* Removed subtle animated white overlay to reveal video more clearly */}
       </div>
 
-      <div className="relative z-10 flex min-h-0 w-full flex-1 flex-col overflow-hidden px-4 pt-[calc(4.75rem+env(safe-area-inset-top))] sm:px-6 sm:pt-[calc(5.25rem+env(safe-area-inset-top))] lg:px-8 lg:pt-[calc(5.5rem+env(safe-area-inset-top))] xl:pt-[calc(5.75rem+env(safe-area-inset-top))] [@media(max-height:720px)]:pt-[calc(4rem+env(safe-area-inset-top))]">
-        <div className="grid min-h-0 flex-1 gap-4 overflow-hidden sm:gap-5 xl:grid-cols-12 xl:items-center xl:gap-6 2xl:gap-10 [@media(max-height:720px)]:gap-3">
+      <div className="relative z-10 flex min-h-0 w-full flex-1 flex-col overflow-hidden max-xl:overflow-visible px-4 pt-[calc(4.75rem+env(safe-area-inset-top))] sm:px-6 sm:pt-[calc(5.25rem+env(safe-area-inset-top))] lg:px-8 lg:pt-[calc(5.5rem+env(safe-area-inset-top))] xl:overflow-hidden xl:pt-[calc(5.75rem+env(safe-area-inset-top))] [@media(max-height:720px)]:pt-[calc(4rem+env(safe-area-inset-top))]">
+        <div className="grid min-h-0 flex-1 gap-4 overflow-hidden max-xl:grid-rows-[auto_minmax(0,1fr)] max-xl:overflow-visible sm:gap-5 xl:grid-cols-12 xl:grid-rows-1 xl:items-center xl:overflow-hidden xl:gap-6 2xl:gap-10 [@media(max-height:720px)]:gap-3">
           {/* Copy — left half on desktop */}
           <div className="flex min-h-0 flex-col justify-center text-white xl:col-span-6 xl:overflow-y-auto xl:pr-4 2xl:pr-6 [@media(max-height:720px)]:justify-start">
             <div className="motion-reduce:animate-none animate-fade-in motion-reduce:opacity-100">
@@ -299,15 +300,15 @@ const Hero = () => {
           </div>
 
           {/* Rotating feature cards — right half, vertically centered on xl+ */}
-          <div className="flex min-h-0 flex-1 flex-col items-stretch motion-reduce:animate-none animate-slide-up [animation-delay:200ms] sm:items-center xl:col-span-6 xl:min-h-0 xl:items-center xl:justify-center xl:pl-2 2xl:pl-4">
-            <div className="w-full max-w-[19rem] sm:max-w-[20rem] xl:w-full xl:max-w-[20rem] 2xl:max-w-[21rem]">
+          <div className="relative z-20 flex min-h-0 flex-1 flex-col items-center motion-reduce:animate-none animate-slide-up [animation-delay:200ms] max-xl:h-full max-xl:min-h-0 max-xl:pb-3 xl:z-auto xl:col-span-6 xl:min-h-0 xl:items-center xl:justify-center xl:pb-0 xl:pl-2 2xl:pl-4">
+            <div className="mx-auto flex min-h-0 w-full max-w-[min(21.5rem,calc(100vw-2rem))] flex-col max-xl:h-full sm:max-w-[20rem] xl:max-w-[20rem] 2xl:max-w-[21rem]">
               <FeatureCarousel reduceMotion={reduceMotion} />
             </div>
           </div>
         </div>
 
         {/* Store CTAs */}
-        <div className="mt-auto flex w-full shrink-0 flex-col gap-2 pt-3 sm:flex-row sm:flex-wrap sm:gap-3 sm:pt-4 md:pt-5 xl:max-w-2xl [@media(max-height:720px)]:gap-2 [@media(max-height:720px)]:pt-2">
+        <div className="relative z-10 mt-auto flex w-full shrink-0 flex-col gap-2 pt-3 sm:flex-row sm:flex-wrap sm:gap-3 sm:pt-4 max-xl:!pt-6 md:pt-5 xl:max-w-2xl [@media(max-height:720px)]:gap-2 [@media(max-height:720px)]:pt-2">
           <button
             type="button"
             className="group flex min-h-[52px] w-full items-center justify-center gap-3 rounded-2xl bg-white px-6 py-3.5 text-primary-dark shadow-[0_20px_40px_-15px_rgba(30,58,109,0.45)] ring-2 ring-white/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_28px_50px_-12px_rgba(30,58,109,0.55)] active:translate-y-0 active:scale-[0.98] motion-reduce:animate-none animate-slide-up-hero [animation-delay:280ms] sm:min-h-[48px] sm:w-auto sm:min-w-[220px] sm:px-7 sm:py-4"

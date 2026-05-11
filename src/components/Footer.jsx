@@ -1,13 +1,8 @@
 // src/components/Footer.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../assets/vela_link_logo.png';
-import TermsModal from './TermsModal';
-import PrivacyModal from './PrivacyModal';
 
-const Footer = () => {
-  const [termsOpen, setTermsOpen] = useState(false);
-  const [privacyOpen, setPrivacyOpen] = useState(false);
-
+const Footer = ({ onPrivacyClick, onTermsClick, onSafetyClick }) => {
   return (
     <footer className="bg-primary-dark text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +17,7 @@ const Footer = () => {
               <span className="font-bold text-xl">VelaLink</span>
             </div>
             <p className="text-white/70 max-w-md">
-              La community definitiva per velisti italiani. Connettiti, condividi, vivi la mare.
+              La community definitiva per velisti italiani. Connettiti, condividi, vivi il mare.
             </p>
           </div>
           <div>
@@ -35,22 +30,30 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4"> legale</h4>
+            <h4 className="font-semibold mb-4">Legale</h4>
             <ul className="space-y-2 text-white/70">
               <li>
                 <button
-                  onClick={(e) => { e.preventDefault(); setPrivacyOpen(true); }}
-                  className="hover:text-primary-light transition-colors"
+                  onClick={onPrivacyClick}
+                  className="hover:text-primary-light transition-colors cursor-pointer"
                 >
                   Privacy Policy
                 </button>
               </li>
               <li>
                 <button
-                  onClick={(e) => { e.preventDefault(); setTermsOpen(true); }}
-                  className="hover:text-primary-light transition-colors"
+                  onClick={onTermsClick}
+                  className="hover:text-primary-light transition-colors cursor-pointer"
                 >
                   Termini di Servizio
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={onSafetyClick}
+                  className="hover:text-primary-light transition-colors cursor-pointer"
+                >
+                  Standard di Sicurezza
                 </button>
               </li>
               <li>
@@ -64,8 +67,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <TermsModal isOpen={termsOpen} onClose={() => setTermsOpen(false)} />
-        <PrivacyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
         <div className="border-t border-white/15 pt-8 text-center text-white/55">
           <p>&copy; {new Date().getFullYear()} VelaLink. Tutti i diritti riservati.</p>
         </div>

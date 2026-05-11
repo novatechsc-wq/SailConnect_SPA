@@ -2,7 +2,7 @@
 import gallery1 from '../assets/Gallery/Image_1.webp';
 import gallery2 from '../assets/Gallery/Image_2.webp';
 import gallery3 from '../assets/Gallery/Image_3.webp';
-import gallery4 from '../assets/Gallery/Image_5.webp';
+import gallery4 from '../assets/Gallery/Image_4.webp';
 import ScrollReveal from './ScrollReveal';
 
 const Gallery = () => {

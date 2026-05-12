@@ -71,7 +71,7 @@ const SafetyStandardPage = ({ onClose }) => {
               segnalarli immediatamente contattandoci a:
             </p>
             <p className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-lg font-semibold text-primary-dark">
-              support@velalink.app
+              customerservice@velalink.it
             </p>
             <p className="text-slate-700">
               Ogni segnalazione verrà esaminata con la massima priorità e riservatezza.
